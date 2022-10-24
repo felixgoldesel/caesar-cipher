@@ -30,7 +30,9 @@ def encrypt(plaintext, key):
     plaintext = plaintext.upper()
 
     for i in plaintext:
-        if ord(i) + int(key) <= 90:
+        if ord(i) == 32:
+            encrypted += " "
+        elif ord(i) + int(key) <= 90:
             encrypted += chr(ord(i) + int(key))
         elif ord(i) + int(key) > 90:
             value = (ord(i) + int(key)) - 90
