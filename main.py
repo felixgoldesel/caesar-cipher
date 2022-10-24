@@ -1,7 +1,3 @@
-from string import ascii_lowercase
-from string import ascii_uppercase
-
-
 option = input("Entschlüsseln [1] oder Verschlüsseln [2]: ")
 #LPUMBLOYBUN PU KPL RYFWAVNYHWOPL
 
@@ -34,7 +30,7 @@ def encrypt(plaintext, key):
     plaintext = plaintext.upper()
 
     for i in plaintext:
-        if ord(i) + int(key) < 90:
+        if ord(i) + int(key) <= 90:
             encrypted += chr(ord(i) + int(key))
         elif ord(i) + int(key) > 90:
             value = (ord(i) + int(key)) - 90
@@ -46,8 +42,3 @@ if option == "1":
     decrypt(input("Geheimtext: "))
 elif option == "2":
     encrypt(input("Text: "), input("Key: "))
-
-
-
-
-
